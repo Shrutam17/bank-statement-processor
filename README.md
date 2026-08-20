@@ -75,7 +75,7 @@ extraction:
   method: "llm"
   llm:
     provider: "google"  # Options: openai, anthropic, google
-    model: "gemini-1.5-flash-latest"
+    model: "gemini-2.5-flash"
     api_key_env: "GOOGLE_API_KEY"
 ```
 
