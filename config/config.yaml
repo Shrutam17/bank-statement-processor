@@ -1,0 +1,35 @@
+app:
+  name: bank-statement-processor
+  max_file_size_mb: 25
+  allowed_extensions: [".pdf"]
+  ocr_dpi: 300
+
+extraction:
+  method: "hybrid"  # Options: "traditional", "llm", "hybrid"
+  llm:
+    provider: "google"  # Options: "openai", "anthropic", "google"
+    model: "gemini-2.5-flash"  # Fast and FREE! Or "gemini-1.5-pro-latest"
+    api_key_env: "GOOGLE_API_KEY"  # Environment variable name
+    fallback_to_traditional: true  # Fallback if LLM fails
+    dpi: 200  # DPI for image conversion
+
+paths:
+  sample_pdfs: sample_pdfs
+  outputs: outputs
+  models: models
+  training_data: data/training/labeled_transactions.csv
+  category_keywords: config/category_keywords.json
+  ml_model_file: models/classifier.joblib
+  vectorizer_file: models/vectorizer.joblib
+
+classification:
+  rule_confidence: 0.95
+  ml_confidence_threshold: 0.55
+  fallback_category: Uncategorized
+
+security:
+  mask_account_numbers_in_logs: true
+  encrypt_outputs: false
+  encryption_key_env_var: BSP_ENCRYPTION_KEY
+  max_pages: 60
+  log_file: logs/app.log

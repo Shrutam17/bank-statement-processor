@@ -1,0 +1,130 @@
+# ========================================
+# Python
+# ========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.pyc
+*.pyo
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+
+# ========================================
+# Virtual Environments
+# ========================================
+venv/
+.venv/
+env/
+ENV/
+virtualenv/
+
+# ========================================
+# IDE & Editor Files
+# ========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# ========================================
+# Testing
+# ========================================
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+*.cover
+
+# ========================================
+# Project Specific - Sensitive Data
+# ========================================
+# API Keys & Environment Variables (CRITICAL - NEVER COMMIT)
+.env
+.env.local
+.env.*.local
+*.key
+secrets/
+credentials/
+
+# Uploaded Files (may contain user data)
+uploads/*
+!uploads/.gitkeep
+
+# Processed Outputs (may contain sensitive data)
+outputs/*.xlsx
+outputs/*.csv
+outputs/*.pdf
+outputs/*.enc
+outputs/*
+!outputs/.gitkeep
+
+# Logs (may contain PII or sensitive info)
+logs/*.log
+logs/*
+!logs/.gitkeep
+
+# ========================================
+# Machine Learning Models (Optional)
+# ========================================
+# Uncomment if models are too large or regenerated
+# models/*.joblib
+# models/*.pkl
+
+# ========================================
+# Temporary Files
+# ========================================
+*.tmp
+*.temp
+*.bak
+*.backup
+.cache/
+
+# ========================================
+# Database Files (if you add DB later)
+# ========================================
+*.db
+*.sqlite
+*.sqlite3
+
+# ========================================
+# macOS
+# ========================================
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ========================================
+# Windows
+# ========================================
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ========================================
+# Linux
+# ========================================
+*~
+.directory
+
+# ========================================
+# Generated Documentation (Optional)
+# ========================================
+# Uncomment if you regenerate these
+# TECHNICAL_DOCUMENTATION.docx
+# *.docx
+
+# ========================================
+# Test Files (Optional - keep sample PDFs)
+# ========================================
+# Keep sample PDFs for testing, but exclude user uploads
+# sample_pdfs/ - KEEP THESE FOR DEMO

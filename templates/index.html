@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Statement Processor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bank Statement Processor</h1>
+            <p class="subtitle">Upload your bank statement PDF for automatic extraction and classification</p>
+        </header>
+
+        <div class="upload-section">
+            <div class="upload-card">
+                <div class="upload-icon">📄</div>
+                <h2>Upload Bank Statement</h2>
+                <p>Supports both text-based and scanned/image-based PDFs</p>
+                
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <div class="file-input-wrapper">
+                        <input type="file" id="fileInput" name="file" accept=".pdf" required>
+                        <label for="fileInput" class="file-label">
+                            <span class="file-label-text">Choose PDF File</span>
+                        </label>
+                        <div id="fileName" class="file-name"></div>
+                    </div>
+
+                    <div class="format-selection">
+                        <label class="format-label">Export Formats:</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="formats" value="xlsx" checked>
+                                <span>Excel (.xlsx)</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="formats" value="csv" checked>
+                                <span>CSV (.csv)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="submitBtn">
+                        <span class="btn-text">Process Statement</span>
+                        <span class="btn-loader" style="display: none;">⏳ Processing...</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div id="resultSection" class="result-section" style="display: none;">
+            <div class="result-card">
+                <h2>Processing Complete</h2>
+                
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">Transactions Found:</span>
+                        <span class="info-value" id="transactionCount"></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Account Holder:</span>
+                        <span class="info-value" id="accountHolder"></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Account Number:</span>
+                        <span class="info-value" id="accountNumber"></span>
+                    </div>
+                </div>
+
+                <div class="download-section">
+                    <h3>Download Results</h3>
+                    <div id="downloadLinks" class="download-links"></div>
+                </div>
+
+                <button class="btn-secondary" onclick="resetForm()">Process Another Statement</button>
+            </div>
+        </div>
+
+        <div id="errorSection" class="error-section" style="display: none;">
+            <div class="error-card">
+                <h2>❌ Error</h2>
+                <p id="errorMessage"></p>
+                <button class="btn-secondary" onclick="resetForm()">Try Again</button>
+            </div>
+        </div>
+
+        <div class="features-section">
+            <h3>Features</h3>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🔍</div>
+                    <h4>Auto Detection</h4>
+                    <p>Automatically detects PDF type (text or scanned)</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🤖</div>
+                    <h4>Smart Classification</h4>
+                    <p>Rules + ML-based transaction categorization (non-LLM)</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔒</div>
+                    <h4>Secure Processing</h4>
+                    <p>File validation, PII masking, secure handling</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📊</div>
+                    <h4>Multiple Formats</h4>
+                    <p>Export to Excel and CSV formats</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Bank Statement Processing & Classification System | Non-LLM AI Solution</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
