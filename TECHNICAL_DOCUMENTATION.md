@@ -2,16 +2,7 @@
 ## Complete Technical Documentation & Development Journey
 
 ---
-
-## 📋 Table of Contents
-
-1. [Executive Summary](#executive-summary)
-2. [System Overview](#system-overview)
-3. [Architecture](#architecture)
-4. [Development Journey & Problem Solving](#development-journey--problem-solving)
-5. [Technical Implementation](#technical-implementation)
-6. [Classification System (Non-LLM)](#classification-system-non-llm)
-7. [Security & Compliance](#security--compliance)
+Z"A & Compliance](#security--compliance)
 8. [How to Run](#how-to-run)
 9. [Performance Metrics](#performance-metrics)
 10. [Future Enhancements](#future-enhancements)
